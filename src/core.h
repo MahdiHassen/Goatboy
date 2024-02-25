@@ -16,3 +16,5 @@ extern uint8_t flags; // Z N H C 0 0 0 0
 
 extern void fetchOpcode();
 extern void executeCycle();
+
+extern uint8_t memory[0x10000]; // 64KB of memory

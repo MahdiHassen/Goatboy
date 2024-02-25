@@ -52,14 +52,15 @@
     uint16_t opcode;
     uint8_t machineCycles;
 
-    uint8_t memory[65536]; // 64KB of memory
+    uint8_t memory[0x10000]; // 64KB of memory
+
+
 
 void fetchOpcode(){
     machineCycles = 1; //default cycles per instruction is one
     opcode = memory[pc];
     pc++;
 }
-
 
 void executeCycle(){
     fetchOpcode();

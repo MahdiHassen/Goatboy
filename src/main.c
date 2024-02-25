@@ -1,6 +1,8 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
-#include <core.h>
+#include "core.h"
+#include "graphics.h"
+#include "cartridge.h"
 
 int main(int argc, char* argv[]) {
     SDL_Init(SDL_INIT_VIDEO);
@@ -19,6 +21,11 @@ int main(int argc, char* argv[]) {
                 case SDL_DROPFILE: {
                     char* dropped_filedir = event.drop.file;
                     printf("Dropped file path: %s\n", dropped_filedir);
+
+                    printf("Loading ROM file...\n");
+                    loadCartridge(dropped_filedir); //testing loading a rom file with drag and drop
+
+
                     SDL_free(dropped_filedir);  // Free dropped_filedir memory block to prevent memory leak
                     break;
                 }
