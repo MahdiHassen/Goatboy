@@ -423,3 +423,4 @@ output/GoatBoyMac.out
 output/GoatBoyMac.out.dSYM/Contents/Info.plist
 output/GoatBoyMac.out.dSYM/Contents/Resources/DWARF/GoatBoyMac.out
 output/GoatBoyMac.out.dSYM/Contents/Resources/Relocations/aarch64/GoatBoyMac.out.yml
+.DS_Store
