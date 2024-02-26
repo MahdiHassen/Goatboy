@@ -56,6 +56,8 @@
 
 
 
+
+
 void fetchOpcode(){
     machineCycles = 1; //default cycles per instruction is one
     opcode = memory[pc];
@@ -64,7 +66,6 @@ void fetchOpcode(){
 
 
 //prefix CB instructions are at the end of the switch statement
-
 void executeCycle(){
     fetchOpcode();
     switch(opcode){
@@ -2900,7 +2901,27 @@ void executeCycle(){
         }
 
         case 0xCB:{
+
+            uint8_t cbOpcode = memory[pc+1];
             printf("CB prefix\n");
+
+            switch (cbOpcode & 0xF0)
+            {
+                case 0x00:{ //RLC or RRC
+
+
+
+
+
+
+                   break; 
+                }
+
+
+
+            default:
+                break;
+            }
             break;
         }
 
