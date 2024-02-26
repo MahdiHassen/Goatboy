@@ -11,8 +11,7 @@ void loadCartridge(char* filename){
         exit(1);
     }
     
-    //location 0x147 in the cartridge data contains the cartridge type, finds what type it is and comapres different types
-    //check header file for different types
+    //location 0x147 in the cartridge data contains the cartridge type
 
     fseek(file, 0x147, SEEK_SET);
     uint8_t cartridgeType;
