@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 
 
                     //fix this after
-
+                    //TODO: Add step through (maybe with GUI?)
                     u_int32_t lastCycleTime = SDL_GetTicks();
                     u_int32_t cycleDelay = 1000; // ms per cycle, should be 1000/CPU speed but slowinf down to test
 
