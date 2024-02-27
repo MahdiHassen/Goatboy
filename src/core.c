@@ -2907,16 +2907,29 @@ void executeCycle(){
             uint8_t cbOpcode = memory[pc+1];
             printf("CB prefix\n");
 
-            //this is to determine which register to use, check header for defines
-
-            uint8_t currentRegister = (cbOpcode & 0x0F);
-            if (currentRegister > 7) {
-                currentRegister -= 8;
-            }
-
-            switch (cbOpcode & 0xF0)
+            switch (cbOpcode)
             {
-                case 0x00:{ //RLC or RRC
+                case 0x00:{ // Rotate Left with Carry B, 2bytes
+                    machineCycles = 2;
+                    uint8_t result = B << 1 | B >> 7;
+                    B = result;
+                    if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+
 
 
 
