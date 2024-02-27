@@ -11,7 +11,17 @@
 #define CB_L 0x5
 #define CB_HL 0x6
 
+//Other CPU Defines
 
+#define clockSpeed 4194304 // 4.194304 MHz
+#define cyclesPerFrame 69905 // 69905 cycles per frame at 60Hz
+#define cyclesPerScanline 456 // 456 cycles per scanline
+
+#define delayPerCycle 238 // 238 nanoseconds per cycle
+
+extern uint8_t machineCycles;
+
+//Cartridge type defines
 extern uint8_t A;
 extern uint8_t B;
 extern uint8_t C;

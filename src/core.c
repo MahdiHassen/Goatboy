@@ -24,7 +24,7 @@
     */
 
     uint16_t sp;
-    uint16_t pc;
+    uint16_t pc = 0x00;
 
     uint8_t flags; // Z N H C 0 0 0 0
 
@@ -62,6 +62,7 @@ void fetchOpcode(){
     machineCycles = 1; //default cycles per instruction is one
     opcode = memory[pc];
     pc++;
+    printf("opcode: 0x%X\n", opcode);
 }
 
 
@@ -2921,6 +2922,8 @@ void executeCycle(){
 
 
 
+
+
                    break; 
                 }
 
@@ -2941,3 +2944,5 @@ void executeCycle(){
     }
 
 }
+
+

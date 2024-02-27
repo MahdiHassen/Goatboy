@@ -26,7 +26,33 @@ int main(int argc, char* argv[]) {
                     loadCartridge(dropped_filedir); //testing loading a rom file with drag and drop
 
 
-                    SDL_free(dropped_filedir);  // Free dropped_filedir memory block to prevent memory leak
+
+                    //fix this after
+
+                    u_int32_t lastCycleTime = SDL_GetTicks();
+                    u_int32_t cycleDelay = 1000; // ms per cycle, should be 1000/CPU speed but slowinf down to test
+
+                    while (1) {
+                        u_int32_t currentTime = SDL_GetTicks();
+                        if ((currentTime - lastCycleTime >= cycleDelay)) {
+                            lastCycleTime = currentTime;
+
+                            if (machineCycles > 0) {
+                                machineCycles--;
+                            }
+
+                            else {
+                            executeCycle();
+                            }
+                        }
+                    }
+
+
+
+
+
+
+                    SDL_free(dropped_filedir);  // free dropped_filedir memory block to prevent memory leak
                     break;
                 }
             }
@@ -38,3 +64,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
