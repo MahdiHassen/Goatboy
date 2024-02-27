@@ -2905,6 +2905,13 @@ void executeCycle(){
             uint8_t cbOpcode = memory[pc+1];
             printf("CB prefix\n");
 
+            //this is to determine which register to use, check header for defines
+
+            uint8_t currentRegister = (cbOpcode & 0x0F);
+            if (currentRegister > 7) {
+                currentRegister -= 8;
+            }
+
             switch (cbOpcode & 0xF0)
             {
                 case 0x00:{ //RLC or RRC
