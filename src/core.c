@@ -779,6 +779,7 @@ void executeCycle(){
 
         case 0x46: { // Load B with (HL), 1byte
             machineCycles = 2;
+            uint16_t HL = H<<8 | L;
             B = memory[H<<8 | L];
             break;
         }

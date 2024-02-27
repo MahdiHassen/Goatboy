@@ -48,10 +48,6 @@ int main(int argc, char* argv[]) {
                     }
 
 
-
-
-
-
                     SDL_free(dropped_filedir);  // free dropped_filedir memory block to prevent memory leak
                     break;
                 }
