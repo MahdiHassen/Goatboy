@@ -1,6 +1,6 @@
 
 
-print("hello world")
+print("CB CASES: \n\n")
 
 
 Start = "case 0xCB: {\n\n"
@@ -44,7 +44,7 @@ def printMidOpcode(Opcode):
                     break;
         '''
 
-    if (CurOpcode == "RRC"):
+    elif (CurOpcode == "RRC"):
         s = ''' 
         machineCycles = 2;
         uint8_t result =''' + CurReg + '''>> 1 |  + ''' + CurReg + ''' << 7;
@@ -67,7 +67,7 @@ def printMidOpcode(Opcode):
                     break;
         '''
 
-    if (CurOpcode == "RL"):
+    elif (CurOpcode == "RL"):
         s = ''' 
         machineCycles = 2;
         uint8_t result =''' + CurReg + '''<< 1 |  + flags & CF;
@@ -90,7 +90,7 @@ def printMidOpcode(Opcode):
                     break;
         '''
 
-    if (CurOpcode == "RR"): 
+    elif (CurOpcode == "RR"): 
         s = ''' 
         machineCycles = 2;
         uint8_t result =''' + CurReg + '''>> 1 |  + flags & CF;
@@ -113,128 +113,135 @@ def printMidOpcode(Opcode):
                     break;
         '''
 
-        if (CurOpcode == "SLA"):    
-            s = ''' 
-            machineCycles = 2;
-            uint8_t result =''' + CurReg + '''<< 1;
-            ''' + CurReg + ''' = result;
-            if(result == 0){
-                            flags |= ZF; // set zero flag
-                        }
-                        else{
-                            flags &= ~ZF; // reset zero flag
-                        }
-                        flags &= ~NF; // reset subtract flag
-                        flags &= ~HF; // reset half carry flag
-                        if(''' + CurReg + ''' & 0x80){
-                            flags |= CF; // set carry flag
-                        }
-                        else{
-                            flags &= ~CF; // reset carry flag
-                        }
-                        pc += 2;
-                        break;
-            '''
-
-        if (CurOpcode == "SRA"):
-            s = ''' 
-            machineCycles = 2;
-            uint8_t result =''' + CurReg + '''>> 1 | ''' + CurReg + ''' & 0x80;
-            ''' + CurReg + ''' = result;
-            if(result == 0){
-                            flags |= ZF; // set zero flag
-                        }
-                        else{
-                            flags &= ~ZF; // reset zero flag
-                        }
-                        flags &= ~NF; // reset subtract flag
-                        flags &= ~HF; // reset half carry flag
-                        if(''' + CurReg + ''' & 0x01){
-                            flags |= CF; // set carry flag
-                        }
-                        else{
-                            flags &= ~CF; // reset carry flag
-                        }
-                        pc += 2;
-                        break;
-            '''
-
-        if (CurOpcode == "SWAP"):
-            s = ''' 
-            machineCycles = 2;
-            uint8_t result =(''' + CurReg + ''' & 0x0F) << 4 | ''' + CurReg + ''' >> 4;
-            ''' + CurReg + ''' = result;
-            if(result == 0){
-                            flags |= ZF; // set zero flag
-                        }
-                        else{
-                            flags &= ~ZF; // reset zero flag
-                        }
-                        flags &= ~NF; // reset subtract flag
-                        flags &= ~HF; // reset half carry flag
+    elif (CurOpcode == "SLA"):    
+        s = ''' 
+        machineCycles = 2;
+        uint8_t result =''' + CurReg + '''<< 1;
+        ''' + CurReg + ''' = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(''' + CurReg + ''' & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
                         flags &= ~CF; // reset carry flag
-                        pc += 2;
-                        break;
-            '''
-        
-        if (CurOpcode == "SRL"):
-            s = ''' 
-            machineCycles = 2;
-            uint8_t result =''' + CurReg + '''>> 1;
-            ''' + CurReg + ''' = result;
-            if(result == 0){
-                            flags |= ZF; // set zero flag
-                        }
-                        else{
-                            flags &= ~ZF; // reset zero flag
-                        }
-                        flags &= ~NF; // reset subtract flag
-                        flags &= ~HF; // reset half carry flag
-                        if(''' + CurReg + ''' & 0x01){
-                            flags |= CF; // set carry flag
-                        }
-                        else{
-                            flags &= ~CF; // reset carry flag
-                        }
-                        pc += 2;
-                        break;
-            '''
+                    }
+                    pc += 2;
+                    break;
+        '''
 
-        if (CurOpcode == "BIT"):
-            s = ''' 
-            machineCycles = 2;
-            if((1 << ''' + CurReg + ''') & ''' + CurReg + '''){
-                flags &= ~ZF; // reset zero flag
-            }
-            else{
-                flags |= ZF; // set zero flag
-            }
-            flags &= ~NF; // reset subtract flag
-            flags |= HF; // set half carry flag
-            pc += 2;
-            break;
-            '''
-        
-        if (CurOpcode == "RES"):
-            s = ''' 
-            machineCycles = 2;
-            ''' + CurReg + ''' &= ~(1 << ''' + CurReg + ''');
-            pc += 2;
-            break;
-            '''
-      
+    elif (CurOpcode == "SRA"):
+        s = ''' 
+        machineCycles = 2;
+        uint8_t result =''' + CurReg + '''>> 1 | ''' + CurReg + ''' & 0x80;
+        ''' + CurReg + ''' = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(''' + CurReg + ''' & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        '''
+
+    elif (CurOpcode == "SWAP"):
+        s = ''' 
+        machineCycles = 2;
+        uint8_t result =(''' + CurReg + ''' & 0x0F) << 4 | ''' + CurReg + ''' >> 4;
+        ''' + CurReg + ''' = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        '''
+    
+    elif (CurOpcode == "SRL"):
+        s = ''' 
+        machineCycles = 2;
+        uint8_t result =''' + CurReg + '''>> 1;
+        ''' + CurReg + ''' = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(''' + CurReg + ''' & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        '''
+
+    elif (CurOpcode == "BIT"):
+        s = ''' 
+        machineCycles = 2;
+        if((1 << ''' + CurReg + ''') & ''' + CurReg + '''){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        '''
+    
+    elif (CurOpcode == "RES"):
+        s = ''' 
+        machineCycles = 2;
+        ''' + CurReg + ''' &= ~(1 << ''' + CurReg + ''');
+        pc += 2;
+        break;
+        '''
+
+    elif (CurOpcode == "SET"):
+        s = ''' 
+        machineCycles = 2;
+        ''' + CurReg + ''' |= (1 << ''' + CurReg + ''');
+        pc += 2;
+        break;
+        '''
+
     else:
-        s = "//idk"
+        s = "Fail: " + CurOpcode
             
 
     return s
 
 def getReg(Opcode): # B=0, C=1 ... A=7
-    if ((Opcode & 0x0F) > 8):
+    if ((Opcode & 0x0F) > 7):
         O = (Opcode & 0x0F) - 8
     else:
         O = Opcode & 0x0F
-
 
     if O == 0:
         return "B"
@@ -254,7 +261,7 @@ def getReg(Opcode): # B=0, C=1 ... A=7
         return "A"
     else:
         print("Error: getReg")
-        print(hex(Opcode))
+        print(hex(O))
         return "FAIL"
         
 def getOperation(Opcode):
