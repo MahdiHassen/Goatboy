@@ -24,7 +24,7 @@
     */
 
     uint16_t sp;
-    uint16_t pc = 0x00;
+    uint16_t pc = 0x100;
 
     uint8_t flags; // Z N H C 0 0 0 0
 
@@ -61,8 +61,10 @@
 void fetchOpcode(){
     machineCycles = 1; //default cycles per instruction is one
     opcode = memory[pc];
+    printf("pc: 0x%X | ", pc);
     pc++;
     printf("opcode: 0x%X\n", opcode);
+    
 }
 
 
@@ -2347,7 +2349,7 @@ void executeCycle(){
         case 0xC2: { // Jump to address if not zero, 3bytes
             machineCycles = 3;
             if(flags & ~ZF){
-                pc = memory[pc+1] | memory[pc+2]<<8;
+                pc = memory[pc] | memory[pc+1]<<8;
                 machineCycles = 5; // 2 more cycles if condition is met
             }
             else{
@@ -2358,7 +2360,7 @@ void executeCycle(){
 
         case 0xC3: { // Jump to address, 3bytes
             machineCycles = 3;
-            pc = memory[pc+1] | memory[pc+2]<<8;
+            pc = memory[pc] | memory[pc+1]<<8;
             break;
         }
 
@@ -2368,7 +2370,7 @@ void executeCycle(){
                 memory[sp-1] = pc>>8;
                 memory[sp-2] = pc;
                 sp -= 2;
-                pc = memory[pc+1] | memory[pc+2]<<8;
+                pc = memory[pc] | memory[pc+1]<<8;
                 machineCycles = 6; // 3 more cycles if condition is met
             }
             else{
