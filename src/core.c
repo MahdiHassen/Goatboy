@@ -56,13 +56,14 @@
 
 
 
-
+void incrementPC(){
+    pc++;
+}
 
 void fetchOpcode(){
     machineCycles = 1; //default cycles per instruction is one
     opcode = memory[pc];
     printf("pc: 0x%X | ", pc);
-    pc++;
     printf("opcode: 0x%X\n", opcode);
     
 }
@@ -2360,7 +2361,7 @@ void executeCycle(){
 
         case 0xC3: { // Jump to address, 3bytes
             machineCycles = 3;
-            pc = memory[pc] | memory[pc+1]<<8;
+            pc = memory[pc+1] | memory[pc+2]<<8;
             break;
         }
 
@@ -2370,7 +2371,7 @@ void executeCycle(){
                 memory[sp-1] = pc>>8;
                 memory[sp-2] = pc;
                 sp -= 2;
-                pc = memory[pc] | memory[pc+1]<<8;
+                pc = memory[pc+1] | memory[pc+2]<<8;
                 machineCycles = 6; // 3 more cycles if condition is met
             }
             else{
