@@ -1,0 +1,3416 @@
+case 0X0: { 
+ 
+        machineCycles = 2;
+        uint8_t result =B<< 1 |  + B >> 7;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X1: { 
+ 
+        machineCycles = 2;
+        uint8_t result =C<< 1 |  + C >> 7;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(C & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X2: { 
+ 
+        machineCycles = 2;
+        uint8_t result =D<< 1 |  + D >> 7;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(D & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X3: { 
+ 
+        machineCycles = 2;
+        uint8_t result =E<< 1 |  + E >> 7;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(E & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X4: { 
+ 
+        machineCycles = 2;
+        uint8_t result =H<< 1 |  + H >> 7;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(H & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X5: { 
+ 
+        machineCycles = 2;
+        uint8_t result =L<< 1 |  + L >> 7;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(L & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X6: { 
+ 
+        machineCycles = 2;
+        uint8_t result =memory[H<<8|L]<< 1 |  + memory[H<<8|L] >> 7;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(memory[H<<8|L] & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X7: { 
+ 
+        machineCycles = 2;
+        uint8_t result =A<< 1 |  + A >> 7;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(A & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X8: { 
+ 
+        machineCycles = 2;
+        uint8_t result =B>> 1 |  + B << 7;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X9: { 
+ 
+        machineCycles = 2;
+        uint8_t result =C>> 1 |  + C << 7;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(C & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0XA: { 
+ 
+        machineCycles = 2;
+        uint8_t result =D>> 1 |  + D << 7;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(D & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0XB: { 
+ 
+        machineCycles = 2;
+        uint8_t result =E>> 1 |  + E << 7;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(E & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0XC: { 
+ 
+        machineCycles = 2;
+        uint8_t result =H>> 1 |  + H << 7;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(H & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0XD: { 
+ 
+        machineCycles = 2;
+        uint8_t result =L>> 1 |  + L << 7;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(L & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0XE: { 
+ 
+        machineCycles = 2;
+        uint8_t result =memory[H<<8|L]>> 1 |  + memory[H<<8|L] << 7;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(memory[H<<8|L] & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0XF: { 
+ 
+        machineCycles = 2;
+        uint8_t result =A>> 1 |  + A << 7;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(A & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X10: { 
+ 
+        machineCycles = 2;
+        uint8_t result =B<< 1 |  + flags & CF;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X11: { 
+ 
+        machineCycles = 2;
+        uint8_t result =C<< 1 |  + flags & CF;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(C & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X12: { 
+ 
+        machineCycles = 2;
+        uint8_t result =D<< 1 |  + flags & CF;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(D & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X13: { 
+ 
+        machineCycles = 2;
+        uint8_t result =E<< 1 |  + flags & CF;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(E & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X14: { 
+ 
+        machineCycles = 2;
+        uint8_t result =H<< 1 |  + flags & CF;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(H & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X15: { 
+ 
+        machineCycles = 2;
+        uint8_t result =L<< 1 |  + flags & CF;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(L & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X16: { 
+ 
+        machineCycles = 2;
+        uint8_t result =memory[H<<8|L]<< 1 |  + flags & CF;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(memory[H<<8|L] & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X17: { 
+ 
+        machineCycles = 2;
+        uint8_t result =A<< 1 |  + flags & CF;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(A & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X18: { 
+ 
+        machineCycles = 2;
+        uint8_t result =B>> 1 |  + flags & CF;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X19: { 
+ 
+        machineCycles = 2;
+        uint8_t result =C>> 1 |  + flags & CF;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(C & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X1A: { 
+ 
+        machineCycles = 2;
+        uint8_t result =D>> 1 |  + flags & CF;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(D & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X1B: { 
+ 
+        machineCycles = 2;
+        uint8_t result =E>> 1 |  + flags & CF;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(E & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X1C: { 
+ 
+        machineCycles = 2;
+        uint8_t result =H>> 1 |  + flags & CF;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(H & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X1D: { 
+ 
+        machineCycles = 2;
+        uint8_t result =L>> 1 |  + flags & CF;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(L & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X1E: { 
+ 
+        machineCycles = 2;
+        uint8_t result =memory[H<<8|L]>> 1 |  + flags & CF;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(memory[H<<8|L] & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X1F: { 
+ 
+        machineCycles = 2;
+        uint8_t result =A>> 1 |  + flags & CF;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(A & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X20: { 
+ 
+        machineCycles = 2;
+        uint8_t result =B<< 1;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X21: { 
+ 
+        machineCycles = 2;
+        uint8_t result =C<< 1;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(C & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X22: { 
+ 
+        machineCycles = 2;
+        uint8_t result =D<< 1;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(D & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X23: { 
+ 
+        machineCycles = 2;
+        uint8_t result =E<< 1;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(E & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X24: { 
+ 
+        machineCycles = 2;
+        uint8_t result =H<< 1;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(H & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X25: { 
+ 
+        machineCycles = 2;
+        uint8_t result =L<< 1;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(L & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X26: { 
+ 
+        machineCycles = 2;
+        uint8_t result =memory[H<<8|L]<< 1;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(memory[H<<8|L] & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X27: { 
+ 
+        machineCycles = 2;
+        uint8_t result =A<< 1;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(A & 0x80){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X28: { 
+ 
+        machineCycles = 2;
+        uint8_t result =B>> 1 | B & 0x80;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X29: { 
+ 
+        machineCycles = 2;
+        uint8_t result =C>> 1 | C & 0x80;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(C & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X2A: { 
+ 
+        machineCycles = 2;
+        uint8_t result =D>> 1 | D & 0x80;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(D & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X2B: { 
+ 
+        machineCycles = 2;
+        uint8_t result =E>> 1 | E & 0x80;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(E & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X2C: { 
+ 
+        machineCycles = 2;
+        uint8_t result =H>> 1 | H & 0x80;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(H & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X2D: { 
+ 
+        machineCycles = 2;
+        uint8_t result =L>> 1 | L & 0x80;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(L & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X2E: { 
+ 
+        machineCycles = 2;
+        uint8_t result =memory[H<<8|L]>> 1 | memory[H<<8|L] & 0x80;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(memory[H<<8|L] & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X2F: { 
+ 
+        machineCycles = 2;
+        uint8_t result =A>> 1 | A & 0x80;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(A & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X30: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(B & 0x0F) << 4 | B >> 4;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X31: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(C & 0x0F) << 4 | C >> 4;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X32: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(D & 0x0F) << 4 | D >> 4;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X33: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(E & 0x0F) << 4 | E >> 4;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X34: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(H & 0x0F) << 4 | H >> 4;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X35: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(L & 0x0F) << 4 | L >> 4;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X36: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(memory[H<<8|L] & 0x0F) << 4 | memory[H<<8|L] >> 4;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X37: { 
+ 
+        machineCycles = 2;
+        uint8_t result =(A & 0x0F) << 4 | A >> 4;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    flags &= ~CF; // reset carry flag
+                    pc += 2;
+                    break;
+        } 
+
+case 0X38: { 
+ 
+        machineCycles = 2;
+        uint8_t result =B>> 1;
+        B = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(B & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X39: { 
+ 
+        machineCycles = 2;
+        uint8_t result =C>> 1;
+        C = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(C & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X3A: { 
+ 
+        machineCycles = 2;
+        uint8_t result =D>> 1;
+        D = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(D & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X3B: { 
+ 
+        machineCycles = 2;
+        uint8_t result =E>> 1;
+        E = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(E & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X3C: { 
+ 
+        machineCycles = 2;
+        uint8_t result =H>> 1;
+        H = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(H & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X3D: { 
+ 
+        machineCycles = 2;
+        uint8_t result =L>> 1;
+        L = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(L & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X3E: { 
+ 
+        machineCycles = 2;
+        uint8_t result =memory[H<<8|L]>> 1;
+        memory[H<<8|L] = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(memory[H<<8|L] & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X3F: { 
+ 
+        machineCycles = 2;
+        uint8_t result =A>> 1;
+        A = result;
+        if(result == 0){
+                        flags |= ZF; // set zero flag
+                    }
+                    else{
+                        flags &= ~ZF; // reset zero flag
+                    }
+                    flags &= ~NF; // reset subtract flag
+                    flags &= ~HF; // reset half carry flag
+                    if(A & 0x01){
+                        flags |= CF; // set carry flag
+                    }
+                    else{
+                        flags &= ~CF; // reset carry flag
+                    }
+                    pc += 2;
+                    break;
+        } 
+
+case 0X40: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X41: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X42: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X43: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X44: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X45: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X46: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X47: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X48: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X49: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X4A: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X4B: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X4C: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X4D: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X4E: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X4F: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X50: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X51: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X52: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X53: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X54: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X55: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X56: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X57: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X58: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X59: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X5A: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X5B: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X5C: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X5D: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X5E: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X5F: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X60: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X61: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X62: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X63: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X64: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X65: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X66: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X67: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X68: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X69: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X6A: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X6B: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X6C: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X6D: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X6E: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X6F: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X70: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X71: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X72: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X73: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X74: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X75: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X76: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X77: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X78: { 
+ 
+        machineCycles = 2;
+        if((1 << B) & B){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X79: { 
+ 
+        machineCycles = 2;
+        if((1 << C) & C){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X7A: { 
+ 
+        machineCycles = 2;
+        if((1 << D) & D){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X7B: { 
+ 
+        machineCycles = 2;
+        if((1 << E) & E){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X7C: { 
+ 
+        machineCycles = 2;
+        if((1 << H) & H){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X7D: { 
+ 
+        machineCycles = 2;
+        if((1 << L) & L){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X7E: { 
+ 
+        machineCycles = 2;
+        if((1 << memory[H<<8|L]) & memory[H<<8|L]){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X7F: { 
+ 
+        machineCycles = 2;
+        if((1 << A) & A){
+            flags &= ~ZF; // reset zero flag
+        }
+        else{
+            flags |= ZF; // set zero flag
+        }
+        flags &= ~NF; // reset subtract flag
+        flags |= HF; // set half carry flag
+        pc += 2;
+        break;
+        } 
+
+case 0X80: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0X81: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0X82: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0X83: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0X84: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0X85: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0X86: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0X87: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0X88: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0X89: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0X8A: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0X8B: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0X8C: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0X8D: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0X8E: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0X8F: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0X90: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0X91: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0X92: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0X93: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0X94: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0X95: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0X96: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0X97: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0X98: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0X99: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0X9A: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0X9B: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0X9C: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0X9D: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0X9E: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0X9F: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XA0: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XA1: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XA2: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XA3: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XA4: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XA5: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XA6: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XA7: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XA8: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XA9: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XAA: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XAB: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XAC: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XAD: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XAE: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XAF: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XB0: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XB1: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XB2: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XB3: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XB4: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XB5: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XB6: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XB7: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XB8: { 
+ 
+        machineCycles = 2;
+        B &= ~(1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XB9: { 
+ 
+        machineCycles = 2;
+        C &= ~(1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XBA: { 
+ 
+        machineCycles = 2;
+        D &= ~(1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XBB: { 
+ 
+        machineCycles = 2;
+        E &= ~(1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XBC: { 
+ 
+        machineCycles = 2;
+        H &= ~(1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XBD: { 
+ 
+        machineCycles = 2;
+        L &= ~(1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XBE: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] &= ~(1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XBF: { 
+ 
+        machineCycles = 2;
+        A &= ~(1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XC0: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XC1: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XC2: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XC3: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XC4: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XC5: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XC6: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XC7: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XC8: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XC9: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XCA: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XCB: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XCC: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XCD: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XCE: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XCF: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XD0: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XD1: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XD2: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XD3: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XD4: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XD5: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XD6: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XD7: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XD8: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XD9: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XDA: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XDB: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XDC: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XDD: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XDE: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XDF: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XE0: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XE1: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XE2: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XE3: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XE4: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XE5: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XE6: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XE7: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XE8: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XE9: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XEA: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XEB: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XEC: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XED: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XEE: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XEF: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XF0: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XF1: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XF2: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XF3: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XF4: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XF5: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XF6: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XF7: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+
+case 0XF8: { 
+ 
+        machineCycles = 2;
+        B |= (1 << B);
+        pc += 2;
+        break;
+        } 
+
+case 0XF9: { 
+ 
+        machineCycles = 2;
+        C |= (1 << C);
+        pc += 2;
+        break;
+        } 
+
+case 0XFA: { 
+ 
+        machineCycles = 2;
+        D |= (1 << D);
+        pc += 2;
+        break;
+        } 
+
+case 0XFB: { 
+ 
+        machineCycles = 2;
+        E |= (1 << E);
+        pc += 2;
+        break;
+        } 
+
+case 0XFC: { 
+ 
+        machineCycles = 2;
+        H |= (1 << H);
+        pc += 2;
+        break;
+        } 
+
+case 0XFD: { 
+ 
+        machineCycles = 2;
+        L |= (1 << L);
+        pc += 2;
+        break;
+        } 
+
+case 0XFE: { 
+ 
+        machineCycles = 2;
+        memory[H<<8|L] |= (1 << memory[H<<8|L]);
+        pc += 2;
+        break;
+        } 
+
+case 0XFF: { 
+ 
+        machineCycles = 2;
+        A |= (1 << A);
+        pc += 2;
+        break;
+        } 
+

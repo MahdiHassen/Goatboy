@@ -1,11 +1,7 @@
 
-
-print("CB CASES: \n\n")
-
-
 Start = "case 0xCB: {\n\n"
 
-End = "} \n"
+End = "} \n\n"
 
 def printStartOpcode(Opcode):
 
@@ -203,6 +199,11 @@ def printMidOpcode(Opcode):
     elif (CurOpcode == "BIT"):
         s = ''' 
         machineCycles = 2;
+
+        bit = opCode & 0b00111000;
+
+        
+
         if((1 << ''' + CurReg + ''') & ''' + CurReg + '''){
             flags &= ~ZF; // reset zero flag
         }
@@ -290,5 +291,10 @@ def getOperation(Opcode):
     else:
         return "N/A"
       
+
+f= open("cbCases.txt", "w")
+
 for op in range(0, 0x100):
-    print(printStartOpcode(op) + printMidOpcode(op) + End)
+    f.write(printStartOpcode(op) + printMidOpcode(op) + End)
+
+f.close()
