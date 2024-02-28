@@ -16,8 +16,6 @@ def printStartOpcode(Opcode):
 
     return s
 
-
-
 def printMidOpcode(Opcode):
 
     CurOpcode = getOperation(Opcode)
@@ -201,6 +199,29 @@ def printMidOpcode(Opcode):
                         pc += 2;
                         break;
             '''
+
+        if (CurOpcode == "BIT"):
+            s = ''' 
+            machineCycles = 2;
+            if((1 << ''' + CurReg + ''') & ''' + CurReg + '''){
+                flags &= ~ZF; // reset zero flag
+            }
+            else{
+                flags |= ZF; // set zero flag
+            }
+            flags &= ~NF; // reset subtract flag
+            flags |= HF; // set half carry flag
+            pc += 2;
+            break;
+            '''
+        
+        if (CurOpcode == "RES"):
+            s = ''' 
+            machineCycles = 2;
+            ''' + CurReg + ''' &= ~(1 << ''' + CurReg + ''');
+            pc += 2;
+            break;
+            '''
       
     else:
         s = "//idk"
@@ -253,14 +274,12 @@ def getOperation(Opcode):
         return "SWAP"
     elif (Opcode <= 0x3F):
         return "SRL"
-    elif (Opcode <= 0x47):
+    elif (Opcode <= 0x7F):
         return "BIT"
-    elif (Opcode <= 0x4F):
+    elif (Opcode <= 0xBF):
         return "RES"
-    elif (Opcode <= 0x57):
+    elif (Opcode <= 0xFF):
         return "SET"
-    #TODO: Add the rest of the opcodes
-
     else:
         return "N/A"
       
