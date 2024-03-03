@@ -65,6 +65,7 @@ void fetchOpcode(){
     opcode = memory[pc];
     printf("pc: 0x%X | ", pc);
     printf("opcode: 0x%X\n", opcode);
+    incrementPC();
     
 }
 
@@ -324,7 +325,7 @@ void executeCycle(){
         case 0x18: { // Jump to PC + nn8, 2bytes
             machineCycles = 3;
             int8_t offset = memory[pc];
-            pc++;
+            pc++; 
             pc = pc + offset;
             break;
         }
@@ -2354,14 +2355,14 @@ void executeCycle(){
                 machineCycles = 5; // 2 more cycles if condition is met
             }
             else{
-                pc += 3;
+                pc += 2;
             }
             break;
         }
 
         case 0xC3: { // Jump to address, 3bytes
             machineCycles = 3;
-            pc = memory[pc+1] | memory[pc+2]<<8;
+            pc = memory[pc] | memory[pc+1]<<8;
             break;
         }
 

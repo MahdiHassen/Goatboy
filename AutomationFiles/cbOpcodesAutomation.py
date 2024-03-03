@@ -200,9 +200,9 @@ def printMidOpcode(Opcode):
         s = ''' 
         machineCycles = 2;
 
-        bit = opCode & 0b00111000;
+        bit = opcode & 0b00111000; //3 bits designated for checked bit
 
-        
+
 
         if((1 << ''' + CurReg + ''') & ''' + CurReg + '''){
             flags &= ~ZF; // reset zero flag
