@@ -2898,7 +2898,7 @@ void executeCycle(){
         }
 
         case 0xFF: { // Call 0x38, 1byte
-            machineCycles = 3;
+            machineCycles = 4;
             memory[sp-1] = pc>>8;
             memory[sp-2] = pc;
             sp -= 2;
