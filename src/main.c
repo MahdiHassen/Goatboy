@@ -7,7 +7,7 @@
 int main(int argc, char* argv[]) {
     SDL_Init(SDL_INIT_VIDEO);
 
-    SDL_Window* window = SDL_CreateWindow("GoatBoy", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_SHOWN);
+    SDL_Window* window = SDL_CreateWindow("GoatBoy: Load ROM", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH*SCREEN_SCALE, SCREEN_HEIGHT*SCREEN_SCALE, SDL_WINDOW_SHOWN);
     SDL_bool running = SDL_TRUE;
 
     while (running) {
@@ -25,12 +25,13 @@ int main(int argc, char* argv[]) {
                     printf("Loading ROM file...\n");
                     loadCartridge(dropped_filedir); //testing loading a rom file with drag and drop
 
-
+                    printf("ROM file loaded.\n");
+                    initGraphics();
 
                     //fix this after
                     //TODO: Add step through (maybe with GUI?)
                     u_int32_t lastCycleTime = SDL_GetTicks();
-                    u_int32_t cycleDelay = 500; //1000/clockSpeed; // ms per cycle, should be 1000/CPU speed but slowinf down to test
+                    u_int32_t cycleDelay = 500; //1000/clockSpeed; // ms per cycle
 
                     while (1) {
                         u_int32_t currentTime = SDL_GetTicks();
